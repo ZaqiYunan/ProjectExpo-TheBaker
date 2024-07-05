@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
+
 import java.io.IOException;
 
 /**
@@ -14,7 +15,7 @@ import java.io.IOException;
  */
 public class App extends Application {
     private static Stage loginStage;
-    private static Stage registrasiStage;
+    private static Stage kalenderInteraktifStage;
 
     private static Scene scene;
 
@@ -34,6 +35,12 @@ public class App extends Application {
     }
     static void setTitle(String title) {
         loginStage.setTitle(title);
+    }
+    static void showKalenderInteraktifPage() throws IOException {
+        kalenderInteraktifStage = new Stage();
+        kalenderInteraktifStage.setScene(new Scene(loadFXML("KalenderPage")));
+        kalenderInteraktifStage.setTitle("Warkop - KalenderPage");
+        kalenderInteraktifStage.show();
     }
 
     private static Parent loadFXML(String fxml) throws IOException {
